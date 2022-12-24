@@ -19,7 +19,7 @@ export class HijoComponent implements OnInit{
     .subscribe(contador => {
       this.contador = contador;
       console.log(contador);
-    })
+    });
 
   }
 

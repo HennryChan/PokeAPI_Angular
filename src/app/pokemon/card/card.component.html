@@ -1,5 +1,42 @@
-<p>card works!</p>
-<p>Nombre</p>
-<input type="text" [(ngModel)]="name")]>
-<button (click)="search()" >Buscar</button>
-<img src="{{imagen}}" alt="Pokemon">
+  <div class="row text-center fw-bold" style="text-transform: capitalize;">
+      <p class="fs-3">
+        {{ character.name }}
+      </p>
+  </div>
+  <div class=" d-flex justify-content-center">
+    <div class="" >
+      <img src="{{ character.sprites.front_default }}" class="" height="340" width="340" alt="Imagen Pokemon">
+    </div>
+
+    <div>
+    <div class="m-5">
+      <div>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Orden
+            <span class="badge bg-primary rounded-pill">
+            #  {{character.order}}
+          </span>
+        </li>
+      </div>
+    </div>
+        <div style="width: 250px;">
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Experiencia
+              <span class="badge bg-primary rounded-pill">{{character.base_experience}}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Altura
+              <span class="badge bg-primary rounded-pill">{{character.height}} </span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Peso
+              <span class="badge bg-primary rounded-pill">{{character.weight}} </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </div>
+
+
+

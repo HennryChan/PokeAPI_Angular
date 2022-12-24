@@ -1,26 +1,23 @@
-import { Component } from '@angular/core';
-import {CardService} from '../services/card-services'
+import { Component, EventEmitter, Input, OnInit, Output,ChangeDetectionStrategy } from '@angular/core';
+import { ModelPokemon } from '../models/pokemon.models';
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styles: [
   ]
 })
-export class CardComponent {
-  name: string = "";
-  imagen: string = "";
+export class CardComponent implements OnInit {
+  @Input ()character!: ModelPokemon;
+  @Output ()adition = new EventEmitter<ModelPokemon>();
 
-  constructor(private cardService : CardService) { }
+  constructor() { }
 
-  ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
+  ngOnInit(): void {}
+
+  onClick():void{
+    this.adition.emit(this.character)
   }
 
-  search(){
-    this.cardService.getPokemon(this.name).subscribe((data:any) => {
-      this.imagen = data.sprites.front_defaul
-    })
-  }
 }

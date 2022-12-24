@@ -9,6 +9,7 @@ import { ResetAction } from '../contador.actions';
   styles: [
   ]
 })
+
 export class NietoComponent implements OnInit {
 
 contador: number = 0;

@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import {Injectable} from '@angular/core';
+import { Observable } from 'rxjs';
+import { ModelPokemon } from '../models/pokemon.models';
 
 @Injectable({
   providedIn : 'root'
@@ -7,9 +9,10 @@ import {Injectable} from '@angular/core';
 
 export class CardService{
   private ulrAPI = 'https://pokeapi.co/api/v2/pokemon/';
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  getPokemon(name: string){
-    return this.http.get(this.ulrAPI + name);
+    getPokemonCard(count: Number):Observable<ModelPokemon>{
+      return this.http.get<ModelPokemon>(`${this.ulrAPI + count}`);
+    }
   }
-}
+

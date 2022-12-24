@@ -17,21 +17,22 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent,
     HijoComponent,
-   NietoComponent
+    NietoComponent,
+    CardComponent
+
 
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule,
-    AppRoutingModule,
-    StoreModule.forRoot({count: contadorReducer}),
-    StoreDevtoolsModule.instrument({
-      maxAge: 25,
-      logOnly: environment.production,
-    }),
+    FormsModule
+   // AppRoutingModule
+    //StoreModule.forRoot({}),
+    //StoreDevtoolsModule.instrument({
+      //maxAge: 25,
+      //logOnly: environment.production,
+    //}),
   ],
   providers: [],
   bootstrap: [AppComponent]
