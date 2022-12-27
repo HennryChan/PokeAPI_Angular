@@ -38,4 +38,11 @@ export class AppComponent {
     this.producSvc.getPokemonCard(this.contador).pipe(tap((pokemon:ModelPokemon)=>this.pokemon = pokemon)).subscribe();
 
   }
+
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    this.producSvc.getPokemonCard(this.contador).pipe(tap((pokemon:ModelPokemon)=>this.pokemon = pokemon)).subscribe();
+
+  }
 }
