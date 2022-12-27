@@ -13,6 +13,7 @@ import { NietoComponent } from './contador/nieto/nieto.component';
 import { CardComponent } from './pokemon/card/card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { PokemonReducer } from './pokemon/pokemon.reducer';
 
 @NgModule({
   declarations: [
@@ -26,9 +27,9 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
    // AppRoutingModule
-    //StoreModule.forRoot({}),
+    StoreModule.forRoot({ })
     //StoreDevtoolsModule.instrument({
       //maxAge: 25,
       //logOnly: environment.production,
